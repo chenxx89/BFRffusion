@@ -1,6 +1,6 @@
 <h1 align="center">Towards Real-World Blind Face Restoration with Generative Diffusion Prior</h1>
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2312.15736.pdf)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2312.15736)
 
 Xiaoxu Chen, Jingfan Tan, Tao Wang, [Kaihao Zhang](https://zhangkaihao.github.io/), [Wenhan Luo](https://whluo.github.io/), [Xiaocun Cao](https://scst.sysu.edu.cn/members/caoxiaochun.htm)
 
@@ -79,8 +79,8 @@ We provide the training codes used in our paper for `BFRffusion`. <br>
 You could improve it according to your own needs.
 
 1. Dataset preparation: [FFHQ](https://github.com/NVlabs/ffhq-dataset)
-2. Download pre-trained Stable Diffusion 2.1-base from [Hugging Face](https://huggingface.co/stabilityai/stable-diffusion-2-1-base/blob/main/v2-1_512-ema-pruned.ckpt) to the `experiments/weights` folder.
-3. Modify the configuration file `options/train.yaml` accordingly.
+2. Download pre-trained Stable Diffusion 2.1-base from [Hugging Face](https://huggingface.co/stabilityai/stable-diffusion-2-1-base/blob/main/v2-1_512-ema-pruned.ckpt) to the `experiments/weights` folder
+3. Modify the configuration file `options/train.yaml` accordingly
 4. Training
 ```bash
 python train.py
@@ -100,7 +100,7 @@ We evaluate BFRffusion on the synthetic dataset `CelebA-Test`, and three real-wo
 |[WebPhoto-Test](https://xinntao.github.io/projects/gfpgan)|testing|407|non-paired real-world dataset|
 
 
-2. Download pretrained models for different metrics, and put them to `experiments/weights`.
+2. Download pretrained models for different metrics, and put them to `experiments/weights`
 
 <table>
 <tr>
@@ -125,7 +125,7 @@ We evaluate BFRffusion on the synthetic dataset `CelebA-Test`, and three real-wo
 
 3. Generate restoration results:
 
-- Specify the dataset_lq/dataset_gt to the testing dataset root in `options/test.yaml`.
+- Specify the dataset_lq/dataset_gt to the testing dataset root in `options/test.yaml`
 
 - We use `multiprocessing` to test on multi-GPUs, please reset `--gpu_ids`
 
@@ -143,13 +143,13 @@ We evaluate BFRffusion on the synthetic dataset `CelebA-Test`, and three real-wo
     # FID
     python metric_paper/calculate_fid_folder.py -restored_folder folder_to_results
 ```
-For more testing details, you can visit [VQFR](https://github.com/TencentARC/VQFR).
+For more testing details, you can visit [VQFR](https://github.com/TencentARC/VQFR)
 
 ## :chart_with_upwards_trend: Results
 
 <img src="assets/table_celeba.png"/>
 
-Quantitative comparison on `CelebA-Test` for blind face restoration.<span style="color:red; font-weight:bold;">Red</span> and <span style="color:blue; text-decoration:underline;">Blue</span> indicate the best and the second-best performance.
+Quantitative comparison on `CelebA-Test` for blind face restoration. <span style="color:red; font-weight:bold;">Red</span> and <span style="color:blue; text-decoration:underline;">Blue</span> indicate the best and the second-best performance.
 
 ## :framed_picture: PFHQ 
 We build a privacy-preserving paired face dataset called `PFHQ` with balanced race, gender, and age. Extensive experiments show that our PFHQ dataset can serve as an alternative to real-face datasets for training blind face restoration methods. Following are some representative face images of our proposed PFHQ dataset. You can download PFHQ dataset [here](https://pan.baidu.com/s/1NnZMj9LknRvml-SAvi3GqQ?pwd=4338).
@@ -173,11 +173,11 @@ If our work is useful for your research, please consider citing:
 
 ## :sparkles: Acknowledgement
 
-- This project is based on [Controlnet](https://github.com/lllyasviel/ControlNet) and [Restormer](https://github.com/swz30/Restormer).
+- This project is based on [Controlnet](https://github.com/lllyasviel/ControlNet), and [Restormer](https://github.com/swz30/Restormer).
 
 - Some codes are brought from [BasicSR](https://github.com/XPixelGroup/BasicSR), and [arcface-pytorch](https://github.com/ronghuaiyang/arcface-pytorch).
 
-- This Readme is inspired by [RobustSIRR](https://github.com/ZhenboSong/RobustSIRR) and [VQFR](https://github.com/TencentARC/VQFR).
+- This Readme is inspired by [RobustSIRR](https://github.com/ZhenboSong/RobustSIRR), and [VQFR](https://github.com/TencentARC/VQFR).
 
 ## :e-mail: Contact
 
