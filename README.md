@@ -1,6 +1,7 @@
 <h1 align="center">Towards Real-World Blind Face Restoration with Generative Diffusion Prior</h1>
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2312.15736.pdf)
+
 Xiaoxu Chen, Jingfan Tan, Tao Wang, [Kaihao Zhang](https://zhangkaihao.github.io/), [Wenhan Luo](https://whluo.github.io/), [Xiaocun Cao](https://scst.sysu.edu.cn/members/caoxiaochun.htm)
 
 **Keywords**: blind face restoration, face dataset, diffusion model, transformer
