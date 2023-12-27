@@ -1,0 +1,151 @@
+model:
+  target: models.models.BFRffusion
+  base_learning_rate: 1e-4
+  checkpoint_path: experiments/weights/v2-1_512-ema-pruned.ckpt
+  params:
+    linear_start: 0.00085
+    linear_end: 0.0120
+    num_timesteps_cond: 1
+    log_every_t: 200
+    timesteps: 1000
+    first_stage_key: "gt"
+    cond_stage_key: "txt"
+    control_key: "lq"
+    image_size: 64
+    channels: 4
+    cond_stage_trainable: True
+    conditioning_key: crossattn
+    monitor: val/loss_simple_ema
+    scale_factor: 0.18215
+    use_ema: False
+    sd_locked_steps: 100000  
+    CosineAnnealing_steps: 200000
+
+    control_stage_config:
+      target: models.transformerBlock.MFEM
+      params:
+        in_channels: 4
+        control_channels: 320
+        time_embed_dim: 1280
+
+    unet_config:
+      target: models.models.ControlledUnetModel
+      params:
+        use_checkpoint: True
+        image_size: 32 # unused
+        in_channels: 4
+        out_channels: 4
+        model_channels: 320
+        attention_resolutions: [ 4, 2, 1 ]
+        num_res_blocks: 2
+        channel_mult: [ 1, 2, 4, 4 ]
+        num_head_channels: 64 # need to fix for flash-attn
+        use_spatial_transformer: True
+        use_linear_in_transformer: True
+        transformer_depth: 1
+        context_dim: 1024
+        legacy: False
+
+    first_stage_config:
+      target: ldm.models.autoencoder.AutoencoderKL
+      params:
+        embed_dim: 4
+        monitor: val/rec_loss
+        ddconfig:
+          #attn_type: "vanilla-xformers"
+          double_z: true
+          z_channels: 4
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+
+    cond_stage_config:
+      target: models.prompt.TTPM
+      params:
+        model_channels: 320
+        dropout: 0.0
+        time_embed_dim: 1280
+        prompt_channels: 77
+        prompt_dim: 1024
+        hidden_size: 512
+        num_heads: 8
+        
+data:
+  target: data.dataset_instantiate.DataModuleFromConfig
+  params:
+    batch_size: 16
+    num_workers: 16
+    wrap: false
+    train:
+      target: data.ffhq_degradation_dataset.FFHQDegradationDataset
+      params:
+        name: FFHQ
+        phase: train
+        dataroot_gt: ~
+        io_backend:
+          type: disk
+        use_hflip: true
+        mean: [0.5, 0.5, 0.5]
+        std: [0.5, 0.5, 0.5]
+        out_size: 512
+        blur_kernel_size: 41
+        kernel_list: ['iso', 'aniso']
+        kernel_prob: [0.5, 0.5]
+        blur_sigma: [0.1, 10]
+        downsample_range: [0.8, 8]
+        noise_range: [0, 20]
+        jpeg_range: [60, 100]
+        use_shuffle: true
+        no_degradation_prob: 0.01
+        prefetch_mode: ~
+
+lightning:
+  use_tb: True
+
+  modelcheckpoint:
+    verbose: True
+    every_n_train_steps: 5000
+    save_last: True
+    save_weights_only: False
+  
+  use_image_logger: True
+  image_logger:
+    batch_frequency: 5000
+    max_images: 4
+    clamp: True
+
+  use_val: True
+  val:
+    val_freq: 5000
+    save_img: true
+    metrics:
+      psnr_ssim: true
+      lpips: true
+
+    dataset:
+      num_workers: 10
+      batch_size: 10
+      target: data.paired_image_dataset.PairedImageDataset
+      params:
+        phase: test
+        dataroot_gt: ~
+        dataroot_lq: ~
+        io_backend:
+          type: disk
+        scale: 1
+
+  trainer:
+    benchmark: True
+    max_steps: 250000
+    gpus: 0,1,2,3
