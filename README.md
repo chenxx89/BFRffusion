@@ -181,4 +181,4 @@ If our work is useful for your research, please consider citing:
 
 ## :e-mail: Contact
 
-If you have any questions, please feel free to reach out at [`chenxx89@mail2.sysu.edu.cn`](mailto:chenxx89@mail2.sysu.edu.cn).
+If you have any questions, please feel free to reach out at `chenxx89@mail2.sysu.edu.cn`.
