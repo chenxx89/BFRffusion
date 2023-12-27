@@ -173,11 +173,11 @@ If our work is useful for your research, please consider citing:
 
 ## :sparkles: Acknowledgement
 
-- This project is based on [Controlnet](https://github.com/lllyasviel/ControlNet)
+- This project is based on [Controlnet](https://github.com/lllyasviel/ControlNet) and [Restormer](https://github.com/swz30/Restormer).
 
-- Some codes are brought from [BasicSR](https://github.com/XPixelGroup/BasicSR), [Restormer](https://github.com/swz30/Restormer) and [arcface-pytorch](https://github.com/ronghuaiyang/arcface-pytorch).
+- Some codes are brought from [BasicSR](https://github.com/XPixelGroup/BasicSR), and [arcface-pytorch](https://github.com/ronghuaiyang/arcface-pytorch).
 
-- This Readme is inspired by [RobustSIRR](https://github.com/ZhenboSong/RobustSIRR) and [VQFR](https://github.com/TencentARC/VQFR)
+- This Readme is inspired by [RobustSIRR](https://github.com/ZhenboSong/RobustSIRR) and [VQFR](https://github.com/TencentARC/VQFR).
 
 ## :e-mail: Contact
 
