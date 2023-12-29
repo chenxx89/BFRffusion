@@ -2,7 +2,7 @@
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2312.15736)
 
-Xiaoxu Chen, Jingfan Tan, Tao Wang, [Kaihao Zhang](https://zhangkaihao.github.io/), [Wenhan Luo](https://whluo.github.io/), [Xiaocun Cao](https://scst.sysu.edu.cn/members/caoxiaochun.htm)
+Xiaoxu Chen, Jingfan Tan, Tao Wang, [Kaihao Zhang](https://zhangkaihao.github.io/), [Wenhan Luo](https://whluo.github.io/), [Xiaochun Cao](https://scst.sysu.edu.cn/members/caoxiaochun.htm)
 
 **Keywords**: blind face restoration, face dataset, diffusion model, transformer
 
