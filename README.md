@@ -42,7 +42,7 @@ conda activate BFRffusion
 You can install `xformers` for more efficiency and speed on GPUs. For more details you can visit [xformers](https://github.com/facebookresearch/xformers) and [stablediffusion](https://github.com/Stability-AI/stablediffusion).
 
 ## :zap: Quick Inference
-Download pre-trained models from [BaiduNetdisk](https://pan.baidu.com/s/1w3R9TuqmpAbP0tsMsGLOZA?pwd=r89i) to the `experiments/weights` folder. 
+Download pre-trained models from [BaiduNetdisk](https://pan.baidu.com/s/1w3R9TuqmpAbP0tsMsGLOZA?pwd=r89i) or [OneDrive](https://mail2sysueducn-my.sharepoint.com/:u:/g/personal/chenxx89_mail2_sysu_edu_cn/EbMHkGqhYUVDndHy5fVlNo4BVMAZ3161X9FR_T_utTYuCA) to the `experiments/weights` folder. 
 
 
 **Inference!**
@@ -133,6 +133,7 @@ We evaluate BFRffusion on the synthetic dataset `CelebA-Test`, and three real-wo
 ```bash
     python test.py
 ```
+You can download our testing results from [BaiduNetdisk](https://pan.baidu.com/s/17SZalfAUTZNl2AFafkOplg?pwd=abdv) or [OneDrive](https://mail2sysueducn-my.sharepoint.com/:f:/g/personal/chenxx89_mail2_sysu_edu_cn/EnlJtXJnYS1Kl_JWrVnI2XIB4SJRmazUXRyTUpkpryZusw).
 
 4. Run evaluation:
 ```bash
