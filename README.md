@@ -153,7 +153,7 @@ For more testing details, you can visit [VQFR](https://github.com/TencentARC/VQF
 Quantitative comparison on `CelebA-Test` for blind face restoration. <span style="color:red; font-weight:bold;">Red</span> and <span style="color:blue; text-decoration:underline;">Blue</span> indicate the best and the second-best performance.
 
 ## :framed_picture: PFHQ 
-We build a privacy-preserving paired face dataset called `PFHQ` with balanced race, gender, and age. Extensive experiments show that our PFHQ dataset can serve as an alternative to real-face datasets for training blind face restoration methods. Following are some representative face images of our proposed PFHQ dataset. You can download PFHQ dataset [here](https://pan.baidu.com/s/1NnZMj9LknRvml-SAvi3GqQ?pwd=4338).
+We build a privacy-preserving paired face dataset called `PFHQ` with balanced race, gender, and age. Extensive experiments show that our PFHQ dataset can serve as an alternative to real-face datasets for training blind face restoration methods. Following are some representative face images of our proposed PFHQ dataset. 
 
 <img src="assets/dataset.png"/>
 
