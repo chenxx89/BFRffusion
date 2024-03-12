@@ -6,9 +6,9 @@ Xiaoxu Chen, Jingfan Tan, Tao Wang, [Kaihao Zhang](https://zhangkaihao.github.io
 
 **Keywords**: blind face restoration, face dataset, diffusion model, transformer
 
-**Abstracts**: Blind face restoration is an important task in computer vision and has gained significant attention due to its wide-range applications. In this work, we delve into the potential of leveraging the pretrained Stable Diffusion for blind face restoration. We propose BFRffusion which is thoughtfully designed to effectively extract features from low-quality face images and could restore realistic and faithful facial details with the generative prior of the pretrained Stable Diffusion. In addition, we build a privacy-preserving face dataset called PFHQ with balanced attributes like race, gender, and age. This dataset can serve as a viable alternative for training blind face restoration methods, effectively addressing privacy and bias concerns usually associated with the real face datasets. Through an extensive series of experiments, we demonstrate that our BFRffusion achieves state-of-the-art performance on both synthetic and real-world public testing datasets for blind face restoration and our PFHQ dataset is an available resource for training blind face restoration networks.
+**Abstracts**: Blind face restoration is an important task in computer vision and has gained significant attention due to its wide-range applications. Previous works mainly exploit facial priors to restore face images and have demonstrated high-quality results. However, generating faithful facial details remains a challenging problem due to the limited prior knowledge obtained from finite data. In this work, we delve into the potential of leveraging the pretrained Stable Diffusion for blind face restoration. We propose BFRffusion which is thoughtfully designed to effectively extract features from low-quality face images and could restore realistic and faithful facial details with the generative prior of the pretrained Stable Diffusion. In addition, we build a privacy-preserving face dataset called PFHQ with balanced attributes like race, gender, and age. This dataset can serve as a viable alternative for training blind face restoration networks, effectively addressing privacy and bias concerns usually associated with the real face datasets. Through an extensive series of experiments, we demonstrate that our BFRffusion achieves state-of-the-art performance on both synthetic and real-world public testing datasets for blind face restoration and our PFHQ dataset is an available resource for training blind face restoration networks.
 
-<img src="assets/pipeline.png"/>
+<img src="assets/model.png"/>
 
 
 ## :book: Table Of Contents
@@ -153,7 +153,7 @@ For more testing details, you can visit [VQFR](https://github.com/TencentARC/VQF
 Quantitative comparison on `CelebA-Test` for blind face restoration. <span style="color:red; font-weight:bold;">Red</span> and <span style="color:blue; text-decoration:underline;">Blue</span> indicate the best and the second-best performance.
 
 ## :framed_picture: PFHQ 
-We build a privacy-preserving paired face dataset called `PFHQ` with balanced race, gender, and age. Extensive experiments show that our PFHQ dataset can serve as an alternative to real-face datasets for training blind face restoration methods. Following are some representative face images of our proposed PFHQ dataset. 
+We build a privacy-preserving paired face dataset called `PFHQ` with balanced race, gender, and age. Extensive experiments show that our PFHQ dataset can serve as an alternative to real-face datasets for training blind face restoration methods. Following are some representative face images of our proposed PFHQ dataset. You can download our PFHQ from [BaiduNetdisk](https://pan.baidu.com/s/1UlkeD5EnAecKRkciHdaOKw?pwd=p7nx).
 
 <img src="assets/dataset.png"/>
 
