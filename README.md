@@ -49,7 +49,7 @@ Download pre-trained models from [BaiduNetdisk](https://pan.baidu.com/s/1w3R9Tuq
 
 ```bash
 # for real-world image
-python inferience.py --input inputs -output results --sr_scale 2
+python inferience.py --input inputs --output results --sr_scale 2
 ```
 ```bash
 # for cropped face
